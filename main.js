@@ -23,26 +23,24 @@ var Content = event.results[0][0].transcript;
       }
 }
 
-
 function speak(){
     var synth = window.speechSynthesis;
-
-    speak_data = "Taking you Selfie in 5 seconds";
+     
+    speak_data = "taking you selfie in 5 seconds";
 
     var utterThis = new SpeechSynthesisUtterance(speak_data);
 
     synth.speak(utterThis);
 
-    Webcam.attach(camera);
-
+    webcam.attach(camera);
+    
     setTimeout(function()
-    { 
-        take_snapshot(); 
+    {
+        take_snapshot();
         save();
     }, 5000);
 }
 
- 
 camera = document.getElementById("camera");
 Webcam.set({
     width:360,
